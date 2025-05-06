@@ -3,17 +3,26 @@
   "type": "project",
   "license": "MIT",
   "description": "A minimal Symfony application to serve as sandbox for the bundle",
+  "minimum-stability": "dev",
   "require": {
     "php": "^8.3",
     "ext-ctype": "*",
     "ext-iconv": "*",
+    "edumarques/dynamophp-symfony": "*",
     "symfony/console": "7.2.*",
     "symfony/dotenv": "7.2.*",
-    "symfony/flex": "^2.5",
+    "symfony/flex": "^2",
     "symfony/framework-bundle": "7.2.*",
     "symfony/runtime": "7.2.*",
     "symfony/yaml": "7.2.*"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../",
+      "options": { "symlink": true }
+    }
+  ],
   "config": {
     "allow-plugins": {
       "php-http/discovery": true,
