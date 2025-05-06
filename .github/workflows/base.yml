@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ./vendor
+          key: ${{ github.sha }}
+
+      - name: build app
+        run: make start
+
+      - name: validate dependencies
+        run: make composer c=validate
+
+      - name: install dependencies
+        run: make composer c=install
+
+      - name: audit dependencies
+        run: make composer c=audit
+
+      - name: run lint
+        run: make lint
+
+      - name: run tests
+        run: make test-cov
+
+      - name: upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+
+      - name: upload test results
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          file: ./coverage/junit.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true

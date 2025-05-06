@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+    tty: true
+    volumes:
+      - .:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

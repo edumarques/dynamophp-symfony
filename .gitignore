@@ -1,0 +1,16 @@
+###> IDEs ###
+.idea
+###< IDEs ###
+
+###> composer ###
+vendor
+###< composer ###
+
+###> phpunit/phpunit ###
+coverage
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> squizlabs/php_codesniffer ###
+.phpcs.cache
+###< squizlabs/php_codesniffer ###
