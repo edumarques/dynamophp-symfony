@@ -58,17 +58,6 @@ phpstan: ## Run PHPStan
 
 lint: phpcs phpstan ## Run PHP Code Sniffer and PHPStan
 
-test: ## Run all tests, pass the parameter "args=" to append arguments (example: make test args='--filter=file.php')
-	@$(DOCKER_COMPOSE) exec app vendor/bin/phpunit --testdox ${args}
-
-test-cov: ## Run all tests and generate coverage report
-	@$(DOCKER_COMPOSE) exec -e XDEBUG_MODE=coverage app vendor/bin/phpunit --testdox --coverage-clover coverage/clover/clover.xml --coverage-html coverage/html --log-junit coverage/junit.xml
-
-cov: test-cov cov-report ## Generate and open test coverage report
-
-cov-report: ## Open test coverage report
-	open coverage/html/index.html
-
 ## 🧙 Composer
 composer: ## Run Composer, pass the parameter "c=" to run a given command (example: make composer c='req vendor/package')
 	@$(COMPOSER) $(c)
