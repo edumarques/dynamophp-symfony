@@ -1,7 +1,8 @@
 DynamoPHP Symfony Bundle
 ================
-![License](https://img.shields.io/github/license/edumarques/dynamophp)
-![Build Status](https://github.com/edumarques/dynamophp/actions/workflows/base.yml/badge.svg)
+![PHP Version](https://img.shields.io/packagist/dependency-v/edumarques/dynamophp-symfony/php?version=dev-main&color=%23777BB3)
+![License](https://img.shields.io/github/license/edumarques/dynamophp-symfony)
+![Build Status](https://github.com/edumarques/dynamophp-symfony/actions/workflows/base.yml/badge.svg)
 
 ---
 
