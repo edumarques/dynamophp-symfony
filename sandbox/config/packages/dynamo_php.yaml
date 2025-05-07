@@ -1,3 +1,4 @@
 dynamo_php:
-  client:
-    region: eu-central-1
+  client: Aws\DynamoDb\DynamoDbClient
+  marshaler: Aws\DynamoDb\Marshaler
+  serializer: Symfony\Component\Serializer\SerializerInterface

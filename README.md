@@ -30,24 +30,16 @@ configuration.
 
 ## Configuration
 
-**Note: this is an optional step. By default, the bundle assumes _DynamoDBClient_ and _Marshaler_ services are already
-registered in the application DI container.**
-
-After installation, you can configure the bundle by creating a `dynamo_php.yaml` file in your `config/packages/`
+After installation, you must configure the bundle by creating a `dynamo_php.yaml` file in your `config/packages/`
 directory:
 
 ```yaml
 # config/packages/dynamo_php.yaml
 dynamo_php:
-  client:
-    region: 'us-east-1'
-    version: 'latest'
-    # Add DynamoDB client configuration options here
-  marshaler:
-  # Add Marshaler configuration options here
+  client: dynamodb_client # set the service ID of the AWS DynamoDB client registered in your app
+  marshaler: marshaler # set the service ID of the AWS Marshaler registered in your app
+  serializer: serializer # set the service ID of the Symfony serializer registered in your app
 ```
-
-Adjust the client and marshaler settings according to your AWS DynamoDB setup and application requirements.
 
 ## Usage
 

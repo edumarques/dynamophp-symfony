@@ -9,3 +9,10 @@ services:
         resource: '../src/'
         exclude:
             - '../src/Kernel.php'
+
+    Aws\DynamoDb\Marshaler:
+
+    Aws\DynamoDb\DynamoDbClient:
+        arguments:
+            $args:
+                region: eu-central-1

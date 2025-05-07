@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace EduardoMarques\DynamoPHPBundle;
 
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\DynamoDb\Marshaler;
 use EduardoMarques\DynamoPHP\Metadata\MetadataLoader;
 use EduardoMarques\DynamoPHP\ODM\EntityManager;
 use EduardoMarques\DynamoPHP\ODM\OpArgsBuilder;
@@ -15,6 +13,7 @@ use EduardoMarques\DynamoPHP\Serializer\EntitySerializer;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ReferenceConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 final class DynamoPHPBundle extends AbstractBundle
@@ -27,8 +26,18 @@ final class DynamoPHPBundle extends AbstractBundle
         /** @phpstan-ignore-next-line */
         $definition->rootNode()
             ->children()
-            ->variableNode('client')->end()
-            ->variableNode('marshaler')->end()
+                ->scalarNode('client')->info('Service ID of the AWS DynamoDB client to use')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('marshaler')->info('Service ID of the AWS Marshaler to use')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('serializer')->info('Service ID of the Symfony Serializer to use')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
             ->end();
     }
 
@@ -38,53 +47,48 @@ final class DynamoPHPBundle extends AbstractBundle
      */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        $clientId = $config['client'];
+        $marshalerId = $config['marshaler'];
+        $serializerId = $config['serializer'];
+
         $services = $container->services();
 
-        if (
-            false === $builder->hasDefinition(DynamoDbClient::class)
-            && false === $builder->hasAlias(DynamoDbClient::class)
-        ) {
-            $services->set(DynamoDbClient::class)
-                ->factory([DynamoDbClient::class, 'factory'])
-                ->arg(0, $config['client'] ?? [])
-                ->public();
-        }
+        $services->set(MetadataLoader::class)->autowire()->autoconfigure()->private();
 
-        if (
-            false === $builder->hasDefinition(Marshaler::class)
-            && false === $builder->hasAlias(Marshaler::class)
-        ) {
-            $services->set(Marshaler::class)
-                ->arg(0, $config['marshaler'] ?? [])
-                ->public();
-        }
-
-        $services->set(MetadataLoader::class)
+        $services->set(EntityNormalizer::class)
+            ->arg('$metadataLoader', new ReferenceConfigurator(MetadataLoader::class))
+            ->arg('$normalizer', new ReferenceConfigurator($serializerId))
             ->autowire()
             ->autoconfigure()
             ->private();
 
-        $services->set(EntityNormalizer::class)
-            ->autowire()
-            ->autoconfigure()
-            ->public();
-
         $services->set(EntityDenormalizer::class)
+            ->arg('$metadataLoader', new ReferenceConfigurator(MetadataLoader::class))
+            ->arg('$denormalizer', new ReferenceConfigurator($serializerId))
             ->autowire()
             ->autoconfigure()
-            ->public();
+            ->private();
 
         $services->set(EntitySerializer::class)
+            ->arg('$entityNormalizer', new ReferenceConfigurator(EntityNormalizer::class))
+            ->arg('$entityDenormalizer', new ReferenceConfigurator(EntityDenormalizer::class))
+            ->arg('$marshaler', new ReferenceConfigurator($marshalerId))
             ->autowire()
             ->autoconfigure()
             ->public();
 
         $services->set(OpArgsBuilder::class)
+            ->arg('$normalizer', new ReferenceConfigurator($serializerId))
+            ->arg('$marshaler', new ReferenceConfigurator($marshalerId))
             ->autowire()
             ->autoconfigure()
             ->public();
 
         $services->set(EntityManager::class)
+            ->arg('$dynamoDbClient', new ReferenceConfigurator($clientId))
+            ->arg('$metadataLoader', new ReferenceConfigurator(MetadataLoader::class))
+            ->arg('$entitySerializer', new ReferenceConfigurator(EntitySerializer::class))
+            ->arg('$opArgsBuilder', new ReferenceConfigurator(OpArgsBuilder::class))
             ->autowire()
             ->autoconfigure()
             ->public();
