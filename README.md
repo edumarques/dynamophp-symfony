@@ -13,8 +13,7 @@ DynamoDB operations.
 ## Features
 
 - Auto-wiring of DynamoPHP services
-- Configurable AWS SDK DynamoDB client and Marshaler
-- Symfony Flex recipe support for automatic configuration
+- Configurable AWS SDK DynamoDB client, Marshaler and Serializer
 - Sandbox application for testing and development
 
 ## Installation
@@ -25,8 +24,16 @@ Install via Composer:
 composer require edumarques/dynamophp-symfony
 ```
 
-Ensure that your Symfony application is configured to use Symfony Flex for automatic bundle registration and
-configuration.
+If your Symfony application is not configured to use Symfony Flex for automatic bundle registration, you need to
+register it manually in `config/bundles.php`:
+
+```php
+# config/bundles.php
+return [
+    // ... other bundles
+    EduardoMarques\DynamoPHPBundle\DynamoPHPBundle::class => ['all' => true],
+];
+```
 
 ## Configuration
 
