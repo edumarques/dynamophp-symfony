@@ -159,16 +159,16 @@
         },
         {
             "name": "edumarques/dynamophp",
-            "version": "v0.2.0",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/edumarques/dynamophp.git",
-                "reference": "4e276e254b40741c8f5e267a79daa2a216fba46f"
+                "reference": "d1103710fda62e3a05f37e8db7e1bc2eb70f5afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/4e276e254b40741c8f5e267a79daa2a216fba46f",
-                "reference": "4e276e254b40741c8f5e267a79daa2a216fba46f",
+                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/d1103710fda62e3a05f37e8db7e1bc2eb70f5afb",
+                "reference": "d1103710fda62e3a05f37e8db7e1bc2eb70f5afb",
                 "shasum": ""
             },
             "require": {
@@ -203,9 +203,9 @@
             "description": "DynamoPHP is a lightweight, strongly-typed Object Data Mapper designed to simplify development with Amazon DynamoDB.",
             "support": {
                 "issues": "https://github.com/edumarques/dynamophp/issues",
-                "source": "https://github.com/edumarques/dynamophp/tree/v0.2.0"
+                "source": "https://github.com/edumarques/dynamophp/tree/v0.2.1"
             },
-            "time": "2025-05-09T14:29:52+00:00"
+            "time": "2025-05-09T17:39:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
