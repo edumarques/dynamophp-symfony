@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71634ac0f887adafac5247defb63a120",
+    "content-hash": "1a2837095f5cfd9ff5a6e3634bb3f326",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -159,16 +159,16 @@
         },
         {
             "name": "edumarques/dynamophp",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/edumarques/dynamophp.git",
-                "reference": "41555687b116fe7b0dcba6be4dbaeadfdf5b95ec"
+                "reference": "4e276e254b40741c8f5e267a79daa2a216fba46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/41555687b116fe7b0dcba6be4dbaeadfdf5b95ec",
-                "reference": "41555687b116fe7b0dcba6be4dbaeadfdf5b95ec",
+                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/4e276e254b40741c8f5e267a79daa2a216fba46f",
+                "reference": "4e276e254b40741c8f5e267a79daa2a216fba46f",
                 "shasum": ""
             },
             "require": {
@@ -203,9 +203,9 @@
             "description": "DynamoPHP is a lightweight, strongly-typed Object Data Mapper designed to simplify development with Amazon DynamoDB.",
             "support": {
                 "issues": "https://github.com/edumarques/dynamophp/issues",
-                "source": "https://github.com/edumarques/dynamophp/tree/v0.1.0"
+                "source": "https://github.com/edumarques/dynamophp/tree/v0.2.0"
             },
-            "time": "2025-05-06T01:22:54+00:00"
+            "time": "2025-05-09T14:29:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

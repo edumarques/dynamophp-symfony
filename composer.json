@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^8.3",
-    "edumarques/dynamophp": "^0.1",
+    "edumarques/dynamophp": "^0.2",
     "symfony/config": "^7.2",
     "symfony/dependency-injection": "^7.2",
     "symfony/http-kernel": "^7.2"
