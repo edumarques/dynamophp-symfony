@@ -53,36 +53,32 @@ final class DynamoPHPBundle extends AbstractBundle
 
         $services = $container->services();
 
-        $services->set(MetadataLoader::class)->autowire()->autoconfigure()->private();
+        $services->set(MetadataLoader::class)->autowire()->autoconfigure();
 
         $services->set(EntityNormalizer::class)
             ->arg('$metadataLoader', new ReferenceConfigurator(MetadataLoader::class))
             ->arg('$normalizer', new ReferenceConfigurator($serializerId))
             ->autowire()
-            ->autoconfigure()
-            ->private();
+            ->autoconfigure();
 
         $services->set(EntityDenormalizer::class)
             ->arg('$metadataLoader', new ReferenceConfigurator(MetadataLoader::class))
             ->arg('$denormalizer', new ReferenceConfigurator($serializerId))
             ->autowire()
-            ->autoconfigure()
-            ->private();
+            ->autoconfigure();
 
         $services->set(EntitySerializer::class)
             ->arg('$entityNormalizer', new ReferenceConfigurator(EntityNormalizer::class))
             ->arg('$entityDenormalizer', new ReferenceConfigurator(EntityDenormalizer::class))
             ->arg('$marshaler', new ReferenceConfigurator($marshalerId))
             ->autowire()
-            ->autoconfigure()
-            ->public();
+            ->autoconfigure();
 
         $services->set(OpArgsBuilder::class)
             ->arg('$normalizer', new ReferenceConfigurator($serializerId))
             ->arg('$marshaler', new ReferenceConfigurator($marshalerId))
             ->autowire()
-            ->autoconfigure()
-            ->public();
+            ->autoconfigure();
 
         $services->set(EntityManager::class)
             ->arg('$dynamoDbClient', new ReferenceConfigurator($clientId))
@@ -90,7 +86,6 @@ final class DynamoPHPBundle extends AbstractBundle
             ->arg('$entitySerializer', new ReferenceConfigurator(EntitySerializer::class))
             ->arg('$opArgsBuilder', new ReferenceConfigurator(OpArgsBuilder::class))
             ->autowire()
-            ->autoconfigure()
-            ->public();
+            ->autoconfigure();
     }
 }
