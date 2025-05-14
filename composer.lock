@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c525f71935494e826214f836c24e4c8",
+    "content-hash": "f872daefc0b7320c70116175d4f9479e",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -159,16 +159,16 @@
         },
         {
             "name": "edumarques/dynamophp",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/edumarques/dynamophp.git",
-                "reference": "5238cd4b989f9c2c33ea4b61cab827c3ffa335fc"
+                "reference": "d9d2b32f025829a01904df06cdeb4b98d31b5440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/5238cd4b989f9c2c33ea4b61cab827c3ffa335fc",
-                "reference": "5238cd4b989f9c2c33ea4b61cab827c3ffa335fc",
+                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/d9d2b32f025829a01904df06cdeb4b98d31b5440",
+                "reference": "d9d2b32f025829a01904df06cdeb4b98d31b5440",
                 "shasum": ""
             },
             "require": {
@@ -203,9 +203,9 @@
             "description": "DynamoPHP is a lightweight, strongly-typed Object Data Mapper designed to simplify development with Amazon DynamoDB.",
             "support": {
                 "issues": "https://github.com/edumarques/dynamophp/issues",
-                "source": "https://github.com/edumarques/dynamophp/tree/v0.3.0"
+                "source": "https://github.com/edumarques/dynamophp/tree/v0.4.0"
             },
-            "time": "2025-05-14T09:18:38+00:00"
+            "time": "2025-05-14T11:27:27+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2853,16 +2853,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.14",
+            "version": "2.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8f2e03099cac24ff3b379864d171c5acbfc6b9a2"
+                "reference": "402d11c1aa40ae2e1c3a512e6a4edb957527b20b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8f2e03099cac24ff3b379864d171c5acbfc6b9a2",
-                "reference": "8f2e03099cac24ff3b379864d171c5acbfc6b9a2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/402d11c1aa40ae2e1c3a512e6a4edb957527b20b",
+                "reference": "402d11c1aa40ae2e1c3a512e6a4edb957527b20b",
                 "shasum": ""
             },
             "require": {
@@ -2907,7 +2907,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-02T15:32:28+00:00"
+            "time": "2025-05-14T11:16:08+00:00"
         },
         {
             "name": "slevomat/coding-standard",
