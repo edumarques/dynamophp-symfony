@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a2837095f5cfd9ff5a6e3634bb3f326",
+    "content-hash": "9c525f71935494e826214f836c24e4c8",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.343.4",
+            "version": "3.343.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "735a810caf3f48d6da7d4887e2c904ead7ed326e"
+                "reference": "473d632d03a78b19f9f75a2126c5ba8c21f09346"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/735a810caf3f48d6da7d4887e2c904ead7ed326e",
-                "reference": "735a810caf3f48d6da7d4887e2c904ead7ed326e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/473d632d03a78b19f9f75a2126c5ba8c21f09346",
+                "reference": "473d632d03a78b19f9f75a2126c5ba8c21f09346",
                 "shasum": ""
             },
             "require": {
@@ -153,22 +153,22 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.343.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.343.10"
             },
-            "time": "2025-05-05T18:06:12+00:00"
+            "time": "2025-05-13T18:09:50+00:00"
         },
         {
             "name": "edumarques/dynamophp",
-            "version": "v0.2.1",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/edumarques/dynamophp.git",
-                "reference": "d1103710fda62e3a05f37e8db7e1bc2eb70f5afb"
+                "reference": "5238cd4b989f9c2c33ea4b61cab827c3ffa335fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/d1103710fda62e3a05f37e8db7e1bc2eb70f5afb",
-                "reference": "d1103710fda62e3a05f37e8db7e1bc2eb70f5afb",
+                "url": "https://api.github.com/repos/edumarques/dynamophp/zipball/5238cd4b989f9c2c33ea4b61cab827c3ffa335fc",
+                "reference": "5238cd4b989f9c2c33ea4b61cab827c3ffa335fc",
                 "shasum": ""
             },
             "require": {
@@ -203,9 +203,9 @@
             "description": "DynamoPHP is a lightweight, strongly-typed Object Data Mapper designed to simplify development with Amazon DynamoDB.",
             "support": {
                 "issues": "https://github.com/edumarques/dynamophp/issues",
-                "source": "https://github.com/edumarques/dynamophp/tree/v0.2.1"
+                "source": "https://github.com/edumarques/dynamophp/tree/v0.3.0"
             },
-            "time": "2025-05-09T17:39:54+00:00"
+            "time": "2025-05-14T09:18:38+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2976,16 +2976,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.12.2",
+            "version": "3.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa"
+                "reference": "65ff2489553b83b4597e89c3b8b721487011d186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa",
-                "reference": "6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/65ff2489553b83b4597e89c3b8b721487011d186",
+                "reference": "65ff2489553b83b4597e89c3b8b721487011d186",
                 "shasum": ""
             },
             "require": {
@@ -3056,7 +3056,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-04-13T04:10:18+00:00"
+            "time": "2025-05-11T03:36:00+00:00"
         }
     ],
     "aliases": [],
